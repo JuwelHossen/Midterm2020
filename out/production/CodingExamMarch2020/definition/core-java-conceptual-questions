@@ -1,27 +1,53 @@
 Please answer the below core-java Questions:
 
 What is programing language?
-A.
+A.  Programing language is a set of instructions that solve the problem.
 
 What jdk contains or composed of and define each components?
-A.
+A.JAVA DEVELOPMENT KIT(JDK): CONTAINS JRE, JAVAC, JVM, JAR
+JRE: JAVA RUNTIME ENVIRONMENT OR RUNTIME INTERPRETOR
+JAVAC: JAVA COMPILER
+JVM: JAVA VIRTUAL MACHINE
+JAR: JAVA ARCHIVE
 
 What is IDE?
-A.
+A. IDE is an integrated development environment is used for developing purpose as text editor, debug and run the source code.
 
 What are the IDEs available in the market to support java?
-A.
+A.There are so many IDEs available in the market such as Eclipse,  Intellij, Clion, CodeBlocks, NetBeans etc.
 
 Explain the entire java life cycle.
+Source code - >compile ->byte code> jvm->interpreter -.> execute by operating system
+
 what is class?
+Class is a blueprint of an Object.
+
 What is object?
+Object is an instance of a class.
+
 What is the entry point of an application?
+Main method is an entry point of an application.
+
 Why main is static?
+Main method is static because can be access without creation of an object.
+
 Which class is the superclass of all classes?
+Object is the superclass of all classes in java.
+
 What is difference between path and classpath variables?
+PATH is an environment variable which is used to locate JDK binaries like "java" or "javac" command used to run java program and compile java source file.
+
+CLASSPATH, an environment variable is used by System locate and load compile Java bytecodes stored in the
+
 What is the difference between an Interface and Abstract class?
+
+
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
+Interface is 100 percent abstract. all methods are abstract.
+Abstract class is partial abstract. it has both concrete and abstract methods.
+
 what is Access Specifier?
+
 What is OOP ? Define each feature of java OOP.
 What is Java Package and which package is imported by default?
 What is API? Name list of API that you have used so far.
@@ -69,6 +95,7 @@ Difference between jUnit and testNG?
 What are the dependencies for this project?
 what is dependency injection in java?
 What is static binding and dynamic binding?
+
 
 
 
