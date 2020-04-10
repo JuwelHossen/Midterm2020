@@ -1,8 +1,14 @@
 package datastructure;
 
+import java.io.*;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.List;
+import java.util.Iterator;
 public class DataReader {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		/*
 		 * User API to read the below textFile and print to console.
 		 * Use BufferedReader class. 
@@ -18,7 +24,63 @@ public class DataReader {
 		 * Use For Each loop/while loop/Iterator to retrieve data.
 		 */
 
-		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+		String textFile ="/Users/juwel/develop/MidtermMarch2020/src/data/self-driving-car";
+				//= System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+
+		FileReader fr = null;
+		BufferedReader br = null;
+
+		try {
+			fr=new FileReader(textFile);
+			br=new BufferedReader(fr);
+
+		}catch (FileNotFoundException ex)
+		{
+			System.out.println("FILE NOT FOUND");
+		}
+
+		String line="";
+
+		try {
+			while((line = br.readLine()) !=null){
+				System.out.println(line);
+			}
+		} catch (IOException e) {
+
+			System.out.println("File path was not right so we could not read");
+		}
+		System.out.println("-----------------------------");
+
+
+
+
+		Scanner in=new Scanner(new File(textFile));
+
+		Stack<String> stack =new Stack<>();
+		List <String> list = new LinkedList<>();
+
+		while(in.hasNext()){
+			String str = in.next();
+            stack.push(str);
+            list.add(str);
+			//.....
+		}
+
+		System.out.println(stack.peek());
+		System.out.println("\n-----------------------------");
+		for(int i=0; i<stack.size(); i++) {
+			System.out.println(stack.pop());
+		}
+		System.out.println("-----------------------------");
+
+		Iterator it = stack.listIterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+		}
+
+		for(String state: stack){
+			System.out.println(state);
+		}
 
 
 
