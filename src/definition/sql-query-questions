@@ -59,9 +59,31 @@ CustomerID	   CustomerName	    CustomerPhone	     Country
 Please do the following on above Order table and Customer table:
 
 Inner Join:
+
+SELECT order.orderID,order.customerID,Customer.customerID,Customer.customerName, Customer.customerPhone
+FROM Order
+INNER JOIN customer
+ON order.customerID = Customer.customerID;
+
 Left Join:
+
+SELECT order.orderID,order.customerID,Customer.customerID,Customer.customerName, Customer.customerPhone
+FROM Order
+LEFT JOIN customer
+ON order.customerID = Customer.customerID;
+
 Right Join:
+SELECT order.orderID,order.customerID,Customer.customerID,Customer.customerName, Customer.customerPhone
+FROM Order
+RIGHT JOIN customer
+ON order.customerID = Customer.customerID;
+
 Full Join:
+
+SELECT order.orderID,order.customerID,Customer.customerID,Customer.customerName, Customer.customerPhone
+FROM Order
+FULL JOIN customer
+ON order.customerID = Customer.customerID;
 
 On Customer Table, please Insert one row.
 insert into Customer values(4,'John Doe', '1-333-444-5555','USA');

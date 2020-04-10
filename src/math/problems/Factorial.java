@@ -1,5 +1,7 @@
 package math.problems;
 
+import org.testng.Assert;
+
 import java.util.Scanner;
 
 /**
@@ -13,10 +15,10 @@ public class Factorial {
          * Write a java program to find Factorial of a given number using Recursion as well as Iteration.
          *
          */
-        int num, fact=1;
+        int num, fact=1,expected;
 
         Scanner in = new Scanner(System.in);
-        System.out.println("ENTER A NUMBER TO FIND FACTORIAL");
+        System.out.println("ENTER ANY NUMBER TO FIND FACTORIAL");
         num = in.nextInt();
          if(num==0) {
              fact = 1;
@@ -28,6 +30,10 @@ public class Factorial {
         }
         System.out.println("FACTORIAL: "+ fact );
         System.out.println("FACTORIAL FROM RECURSION : "+factorial(num));
+
+        System.out.println("\nENTER A EXPECTED VALUE OF FACTORIAL:" );
+        expected=in.nextInt();
+        test(expected,fact);
 
 
     }
@@ -41,6 +47,12 @@ public class Factorial {
             return 1;
         return n*factorial(n-1);
     }
+
+    public static void test(int a,int b)
+    {
+        Assert.assertEquals(a,b);
+    }
+
 
 }
 

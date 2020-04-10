@@ -59,6 +59,12 @@ CustomerID	   CustomerName	    CustomerPhone	     Country
 Please do the following on above Order table and Customer table:
 
 Inner Join:
+
+SELECT order.orderID,order.customerID,Customer.customerID,Customer.customerName, Customer.customerPhone
+FROM
+INNER JOIN customer
+ON order.customerID = Customer.customerID;
+
 Left Join:
 Right Join:
 Full Join:
