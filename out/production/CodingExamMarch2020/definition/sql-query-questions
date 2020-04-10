@@ -2,18 +2,43 @@ This file contains SQL questions.
 Please read the questions and answer.
 
 What is Database?
-A.
+A. A database is an organized information or structured data.
 
 What is DBMS?
+A database is usually controlled by a database management system (DBMS).
+
 What is the difference between SQL and MySQL?
+SQL (Structure query language)is used in the accessing, updating, and manipulation of data in a database.
+MySQL is an Relational database management system that allows keeping the data that exists in a database.
+
 What is RDBMS? How is it different from DBMS?
+
+RDBMS:Relational database management system. store data in a tabular form,
+DBMS:Database management system.store data in a file form
+
 What are Tables and Fields?
+A table is a data structure where data can be organized.
+A fields columns & records
+
 What is SQL?
+Standard Structured Query Language is used to data manipulation.
+
 What are Constraints in SQL?
+Constraints are the rules enforced on the data columns of a table.
+
 What is a Primary Key?
+A primary key is a special key used to uniquely identify records in a table, unique and not null.
+
 What is a Foreign Key?
+Foreign key is used to establish relationship between two tables. can be duplicated for one table
+but primary key for the another table
+
 What is Normalization?
+It usually divides a large table into smaller ones, so it is more efficient.
+
 What is Denormalization?
+
+Denormalization is a database optimization technique in which we add redundant data to one or more tables.
 
 You have 2 tables given below.
 
@@ -39,8 +64,10 @@ Right Join:
 Full Join:
 
 On Customer Table, please Insert one row.
+insert into Customer values(4,'John Doe', '1-333-444-5555','USA');
+
 
 On Order Table, please Update one row.
-
+insert into Order values(23000,2, '01-01-2020');
 
 

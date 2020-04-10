@@ -43,8 +43,8 @@ public class Numbers {
 		algo.insertionSort(num);
 		long insertionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-		List<String> numbers1 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumbers");
+		List<String> numbers1 = connectToSqlDB.readDataBase("insertion_sort", "SortingNumbers");
 		printValue(numbers1);
 
 		 n = num.length;
@@ -56,8 +56,8 @@ public class Numbers {
 		algo.bubbleSort(num);
 		long bubbleSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in bubble Sort take: " + bubbleSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-		List<String> numbers2 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "bubble_sort", "SortingNumbers");
+		List<String> numbers2 = connectToSqlDB.readDataBase("bubble_sort", "SortingNumbers");
 		printValue(numbers2);
 		 n = num.length;
 		randomize (num, n);
@@ -68,8 +68,8 @@ public class Numbers {
 		algo.mergeSort(num,0,num.length-1);
 		long mergeSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in merge Sort take: " + mergeSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-		List<String> numbers3 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "merge_sort", "SortingNumbers");
+		List<String> numbers3 = connectToSqlDB.readDataBase("merge_sort", "SortingNumbers");
 		printValue(numbers3);
 		 n = num.length;
 		randomize (num, n);
@@ -79,8 +79,8 @@ public class Numbers {
 		algo.quickSort(num,0,num.length-1);
 		long quickSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in quick Sort take: " + quickSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-		List<String> numbers4 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "quick_sort", "SortingNumbers");
+		List<String> numbers4 = connectToSqlDB.readDataBase("quick_sort", "SortingNumbers");
 		printValue(numbers4);
 		 n = num.length;
 		randomize (num, n);
@@ -90,8 +90,8 @@ public class Numbers {
 		algo.heapSort(num);
 		long heapSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in heap Sort take: " + heapSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-		List<String> numbers5 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "heap_sort", "SortingNumbers");
+		List<String> numbers5 = connectToSqlDB.readDataBase("heap_sort", "SortingNumbers");
 		printValue(numbers5);
 		 n = num.length;
 		randomize (num, n);
@@ -100,8 +100,8 @@ public class Numbers {
 		algo.bucketSort(num,maxValue(num));
 		long bucketSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in bucket Sort take: " + bucketSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-		List<String> numbers6 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "bucket_sort", "SortingNumbers");
+		List<String> numbers6 = connectToSqlDB.readDataBase("bucket_sort", "SortingNumbers");
 		printValue(numbers6);
 		 n = num.length;
 		randomize (num, n);
@@ -111,8 +111,8 @@ public class Numbers {
 		algo.shellSort(num);
 		long shellSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in shell Sort take: " + shellSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-		List<String> numbers7 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "shell_sort", "SortingNumbers");
+		List<String> numbers7 = connectToSqlDB.readDataBase("shell_sort", "SortingNumbers");
 		printValue(numbers7);
 
 

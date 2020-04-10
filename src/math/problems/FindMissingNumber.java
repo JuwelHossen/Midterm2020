@@ -12,6 +12,32 @@ public class FindMissingNumber {
          * Write java code to find the missing number from the array. Write static helper method to find it.
          */
          int [] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
+         int total=totalSum(10);
+         int current=sumOfArray(array);
+         int missing=total-current;
+
+         System.out.println("Total :"+total);
+         System.out.println("Current: "+current);
+         System.out.println("Missing number: "+missing);
 
     }
+
+    public static int sumOfArray(int [] a)
+    {
+        int sum=0;
+        for(int i=0;i<a.length; i++) {
+            sum += a[i];
+        }
+
+        return sum;
+    }
+
+    public static int totalSum(int a)
+    {
+        int sum=0;
+        for(int i=1;i<=a;i++)
+            sum+=i;
+        return sum;
+    }
+
 }

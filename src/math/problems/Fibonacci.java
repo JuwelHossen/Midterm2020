@@ -1,5 +1,7 @@
 package math.problems;
 
+import java.util.Scanner;
+
 public class Fibonacci {
     public static void main(String[] args) {
          /*
@@ -8,5 +10,25 @@ public class Fibonacci {
          */
 
 
+        int num, prev=0,next=1,fib=1;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter how many Fibonacci number you want : ");
+        num = in.nextInt();
+        System.out.println("Fibonacci: "+ prev );
+        System.out.println("Fibonacci: "+ next );
+        for(int i=1;i<=num-2;i++)
+        {
+            fib=prev+next;
+
+            System.out.println("Fibonacci: "+ fib );
+            prev= next;
+            next=fib;
+
+
+        }
+
+
     }
+
+
 }

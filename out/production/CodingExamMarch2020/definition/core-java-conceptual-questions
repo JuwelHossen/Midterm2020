@@ -47,28 +47,92 @@ Interface is 100 percent abstract. all methods are abstract.
 Abstract class is partial abstract. it has both concrete and abstract methods.
 
 what is Access Specifier?
+A. These Specifiers determine whether a field or method in a class,
+    can be used or by another method or  another class or sub-class.
 
 What is OOP ? Define each feature of java OOP.
+ A. OOP:OBJECT ORIENTED PROGRAMMING LANGUAGE
+    abstraction -IMPLEMENTATION HIDING
+    interface: ROAD MAP OF A CLASS
+    encapsulation: DATA HIDING
+    polymorphism:  MANY FORM OF AN OBJECT
+
 What is Java Package and which package is imported by default?
+A.Package in Java is a mechanism to encapsulate a group of classes, sub packages and interfaces.
+ lang package is imported by default.
+
 What is API? Name list of API that you have used so far.
+Application Programming Interface. math ,database and Gui.
+
 Does java support multiple inheritance, explain why or why not?
+NO,y because it leads Method overriding extended same class and same method name.
+
 What is method overloading and when it happens?
+Same method name but different parameter is called method overloading. it happens in compile time.
+
 Explain exceptions in java and how to handle it.
+Some potential errors might occurs in runtime is called exception. using try catch block we can handle
+exception.
+
 What is static keyword in java? How it has been used in variables and methods ?
+Static keyword in java which identifies it is class-based .
+it can be accessed without creating the instance of a Class. Using class name then dot operator to access
+fields and methods.
+
 What is final and how it has been used variables and methods?
-What is final, finally and finalize?
+Final variable means you can't assign with new value in it.
+A variable is declared with final keyword, its value can't be modified, essentially, a constant.
+Final methods cant be overloaded or overriding.
+
+What is final,firnally and finalize?
+Final is a keyword is used for restrictions on class, method and variable.
+Finally block use after try-catch block.
+Finalize is used to perform clean up processing just before object is garbage collected.
+
 What is a constructor ?
+constructor refers to a block of code which is used to initialize an object.
+
 Can we have multiple constructors in a class?
+YES.
+
 If we don't have a constructor declared, what is called during the object creation?
+Default constructor
+
 What is "this" keyword in java ?
+this keyword is used to refer the current class
+
 What is "super" keyword in java? How many possible way can you use?
+
+super keyword use to invoke super class method, variable and constructor in sub class.
+super can be used to refer immediate parent class instance variable.
+super can be used to invoke immediate parent class method.
+super() can be used to invoke immediate parent class constructor.
+
 What is JVM stand for ?
+ JVM:Java Virtual Machine
+
 Is JVM platform independent?
+YES , IT IS.
+
 What version of java are you using?
+java version "1.8.0_181"
+
 What is JAR stand for ?
+Java Archive
+
 What is the difference between JDK and JVM?
+
+JDK is Java Developer Kit, the JDK is what you need to compile Java source code.
+JVM is Java Virtual Machine, the JVM actually runs Java bytecode.
+
+
 What is the difference between JVM and JRE?
+JVM: is Java Virtual Machine, the JVM actually runs Java bytecode.JVM is the content.
+JRE: is the container, Java Runtime Environment contains JVM, class libraries, and other supporting files.
+
+
 What is compile time and run time?
+
 What is heap?
 How java manage it's memory?
 What is the difference between String, StringBuffer and StringBuilder?
