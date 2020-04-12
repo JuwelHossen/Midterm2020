@@ -3,7 +3,10 @@ package codelab.status;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.*;
+
+import static java.lang.System.*;
 
 public class CsvReader {
 
@@ -14,7 +17,7 @@ public class CsvReader {
          You need to find the average score of the class.
          */
 
-        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster-file-09-07-2019.csv";
+        String csvFilePath = getProperty("user.dir") + "/src/codelab/status/roster-file-09-07-2019.csv";
         String line = "";
         String cvsSplitBy = ",";
         BufferedReader br = null;
@@ -44,28 +47,41 @@ public class CsvReader {
         Collections.sort(roster);
        for(Trainee student:roster) {
             if (student.getNumberOfExercisesSolved()>=600) {
-                System.out.print("You did pretty good-->                    ");
-                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
+                out.print("You did pretty good-->                    ");
+                out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             } else if (student.getNumberOfExercisesSolved()>=500 && student.getNumberOfExercisesSolved()<600) {
-                System.out.print("You could do little better-->             ");
-                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
+                out.print("You could do little better-->             ");
+                out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=400 && student.getNumberOfExercisesSolved()<500) {
-                System.out.print("You could do better-->                    ");
-                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
+                out.print("You could do better-->                    ");
+                out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=300&& student.getNumberOfExercisesSolved()<400) {
-                System.out.print("You should have done more-->              ");
-                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
+                out.print("You should have done more-->              ");
+                out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=200&&student.getNumberOfExercisesSolved()<300) {
-                System.out.print("You haven't done enough-->                 ");
-                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
+                out.print("You haven't done enough-->                 ");
+                out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()>=100&&student.getNumberOfExercisesSolved()<200) {
-                System.out.print("You did not take this course seriously-->   ");
-                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
+                out.print("You did not take this course seriously-->   ");
+                out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }else if (student.getNumberOfExercisesSolved()<100) {
-                System.out.print("Shame on You !-->                           ");
-                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
+                out.print("Shame on You !-->                           ");
+                out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }
         }
+       int total=0;
+
+        for(int i=0; i<roster.size();i++)
+        {
+            Trainee trainee = roster.get(i);
+            total=total+trainee.getNumberOfExercisesSolved();
+        }
+
+        DecimalFormat df2 = new DecimalFormat("####.##");
+        double avg= ((double)total/roster.size());
+        out.println("\nTotal Participants is : "+roster.size());
+        out.println("\nTotal Number of Problem Solved : "+total);
+        out.println("\nThe average number problem solved : "+df2.format(avg));
 
 
     }
