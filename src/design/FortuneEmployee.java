@@ -53,8 +53,6 @@ public class FortuneEmployee {
 
           PartTimeEmployee partTimeEmployee= new PartTimeEmployee("HABIB",28);
 
-
-
 		System.out.println("  PART TIME EMPLOYEE NAME : "+partTimeEmployee.employeeName());
 		System.out.println("  PART TIME EMPLOYEE ID   : "+partTimeEmployee.employeeId());
 		System.out.println(  partTimeEmployee.calculateEmployeeBonus());
