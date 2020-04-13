@@ -2,7 +2,8 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo implements Employee {
+public class EmployeeInfo extends EmployBenifits implements Employee
+{
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
@@ -20,10 +21,19 @@ public class EmployeeInfo implements Employee {
 	/*
 	 * declare few static and final fields and some non-static fields
 	 */
-	static String companyName;
-	int employeeID;
+
+
+
+	int  employeeID;
 	String name;
-	final static int SALARY=5000;
+	private String department;
+	private String position;
+	private  int yearsWorked;
+
+	private static String companyName;
+	private final static int SALARY=5000;
+	double total_salary=0.0;
+
 
 	/*
 	 * You must implement the logic for below 2 methods and 
@@ -35,17 +45,44 @@ public class EmployeeInfo implements Employee {
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-	public EmployeeInfo(int employeeId)
+
+	//default costructor
+	public EmployeeInfo()
 	{
-		this.employeeID=employeeId;
-		
+		System.out.println("\t\t\t\t\t EMPLOYEE INFORMATION");
+
 	}
+	//
+	public EmployeeInfo(String companyName)
+	{
+		this.companyName=companyName;
+		System.out.println("\n\t\t\tWELCOME TO YOUR "+companyName+" COMPANY'S EMPLOY INFORMATION \n");
+		System.out.println("Name     ID Number     Department      Position     Years Worked      Pension      Bonus      Total salary   ");
+		System.out.println("=====    =========     ==========      ========     ============      =======     ========     ============  ");
+
+	}
+
     public EmployeeInfo(String name, int employeeId)
 	{
 		this.name=name;
 		this.employeeID=employeeId;
-		
 	}
+
+   // Constructor overloading
+
+	public EmployeeInfo(String name, int  employeeID,String department,String position,int yearsWorked)
+	{
+
+		this.name=name;
+		this.employeeID=employeeID;
+		this.department=department;
+		this.position=position;
+		this.yearsWorked=yearsWorked;
+
+	}
+
+
+
 
 
 
@@ -57,33 +94,37 @@ public class EmployeeInfo implements Employee {
 	 * So you probably need to send 2 arguments.
 	 * 
 	 */
-	public static double calculateEmployeeBonus(int numberOfYearsWithCompany,int salary)
+
+	public  double calculateEmployeeBonus()
 	{
-		double total=0;
+		double total= SALARY;
 
-		int n =numberOfYearsWithCompany;
+        double salary=SALARY;
+		int n=yearsWorked;
 
-        if (n>15)
+        if (n>=15)
         {
-        	total= salary* .10;
+        	total= salary* .15;
 		}
-        else if(n>10)
-			total= salary* .08;
+        else if(n>=10)
+			total= salary* .10;
         else
         	total=salary* .05;
 
 		return total;
 	}
-	
+
+
 	/*
 	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
 	 * Then it will return the total pension. So you need to implement the logic.
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public  int calculateEmployeePension(int n){
+	public  int calculateEmployeePension(){
 		int total=0;
-		Scanner sc  = new Scanner(System.in);
+		int n= yearsWorked;
+		//Scanner sc  = new Scanner(System.in);
 		//System.out.println("Please enter start date in format (example: May,2015): ");
 		//String joiningDate = sc.nextLine();
 		//System.out.println("Please enter today's date in format (example: August,2017): ");
@@ -95,51 +136,111 @@ public class EmployeeInfo implements Employee {
         //implement numbers of year from above two dates
 		//Calculate pension
 
-		if(n<=1) {
-			total = (int) (SALARY * .05);
+		if(n<=5) {
+			total = (int) (SALARY * .20);
 		}
-		else if(n<=2) {
-			total = (int) (SALARY * .10);
+		else if(n<=10) {
+			total = (int) (SALARY * .15);
 
 		}
-		else if(n<=3) {
-			total = (int) (SALARY * .15);
+		else if(n<=15) {
+			total = (int) (SALARY * .10);
 		}
 		else
-			total = (int) (SALARY * .20);
+			total = (int) (SALARY * .05);
 
 		return total;
 	}
 
+
+
+
 	@Override
-	public int employeeId() {
+	public int employeeId()
+	{
 		return employeeID;
 	}
 
+	public void setEmployeeId(int n)
+	{
+		this.employeeID=n;
+	}
+
 	@Override
-	public String employeeName() {
+	public String employeeName()
+	{
 		return name;
 	}
 
-	@Override
-	public void assignDepartment()
+	public void setEployeeName(String name)
+	{
+		this.name=name;
+	}
+
+
+	public void assignDepartment(String department)
 	{
 
+          this.department=department;
+
 	}
+	public void assignDepartment()
+	{
+       this.department =department;
+	}
+
+	public String getDepartment()
+	{
+		return department;
+	}
+
+	public String getPosition(){
+		return this.position;
+	}
+
+	public  int getYearsWorked()
+	{
+		return yearsWorked;
+	}
+//display all value
+   public void display()
+   {
+		System.out.println("Comapany name:"+companyName);
+	   System.out.println("Employee name:"+name);
+	   System.out.println("Employee ID:"+employeeID);
+	   System.out.println("Position: "+position);
+	   System.out.println("Employee Department:"+department);
+   }
+
+
+
+
+
+
 
 	@Override
 	public int calculateSalary()
 	{
-		return this.SALARY;
+
+		int total= SALARY+ (int)calculateEmployeeBonus()-(calculateEmployeePension());
+
+		return total;
+
 	}
 
 	@Override
 	public void benefitLayout()
 	{
-		System.out.println("GOOD HEALTH CARE \n Travel \n Free Hotel");
+		System.out.println("GOOD HEALTH CARE .   Travel Expenses, Free Food Expenses ");
 	}
 
-	private static class DateConversion {
+
+
+
+
+
+	private static class DateConversion
+	{
 
 		public DateConversion(Months months){}
 		public static String convertDate(String date) {

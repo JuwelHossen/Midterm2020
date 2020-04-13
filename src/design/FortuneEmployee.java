@@ -15,27 +15,56 @@ public class FortuneEmployee {
 	 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 	 *
 	 **/
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws NullPointerException
+	{
 
 
-		EmployeeInfo  employeeInfo1 = 	new EmployeeInfo("A",1);
-		EmployeeInfo  employeeInfo2 = 	new EmployeeInfo("B",2);
-		EmployeeInfo  employeeInfo3 = 	new EmployeeInfo("C",3);
 
-		System.out.println("NAME OF EMP 1 : "+employeeInfo1.employeeName());
-		System.out.println("NAME OF EMP 2 : "+employeeInfo2.employeeName());
-		System.out.println("NAME OF EMP 3 : "+employeeInfo3.employeeName());
-		System.out.println("\n..........");
+       //default constructor
+		EmployeeInfo  employeeInfo0= 	new EmployeeInfo();
+		EmployeeInfo  employeeInfo = 	new EmployeeInfo("*** BIG DREAM ***");
 
-		System.out.println("PENSION OF EMP 1 : "+employeeInfo1.calculateEmployeePension(5));
-		System.out.println("PENSION OF EMP 2 : "+employeeInfo2.calculateEmployeePension(2));
-		System.out.println("PENSION OF EMP 3 : "+employeeInfo3.calculateEmployeePension(1));
 
-		System.out.println("\n..........");
-		System.out.println("Bonus OF EMP 1 : "+ EmployeeInfo.calculateEmployeeBonus(10,5000));
-		System.out.println("BONUS EMP 2 : "+EmployeeInfo.calculateEmployeeBonus(5,2000));
-		System.out.println("BONUS  EMP 3 : "+EmployeeInfo.calculateEmployeeBonus(1,1000));
+
+		EmployeeInfo  emp1 = new EmployeeInfo("RANA",1,"HR","MANAGER",10);
+		EmployeeInfo  emp2 = new EmployeeInfo("SOJOL",2,"FINANCE","CEO",24);
+		EmployeeInfo  emp3 = new EmployeeInfo("ARIFUL",3,"MARKETING","LEAD MANAGER",2);
+
+		// Printing Employee information in this pattern
+		//"Name     ID Number     Department      Position     Years Worked      Pension      Bonus      Total salary   "
+
+		System.out.println(emp1.employeeName()+"      "+emp1.employeeId()+"             "+emp1.getDepartment()+"              "+
+							emp1.getPosition()+"          "+emp1.getYearsWorked()+"               "+emp1.calculateEmployeePension()
+							+"       "+emp1.calculateEmployeeBonus()+"          "+emp1.calculateSalary());
+
+
+		System.out.println(emp2.employeeName()+"     "+emp2.employeeId()+"             "+emp2.getDepartment()+"         "+
+				emp2.getPosition()+"               "+emp2.getYearsWorked()+"               "+emp2.calculateEmployeePension()
+				+"       "+emp2.calculateEmployeeBonus()+"          "+emp2.calculateSalary());
+
+
+		System.out.println(emp3.employeeName()+"    "+emp3.employeeId()+"             "+emp3.getDepartment()+"       "+
+				emp3.getPosition()+"      "+emp3.getYearsWorked()+"              "+emp3.calculateEmployeePension()
+				+"      "+emp3.calculateEmployeeBonus()+"          "+emp3.calculateSalary()+"\n");
+
+
+
+		//inheritance super keyword and method overloading and overriding
+
+          PartTimeEmployee partTimeEmployee= new PartTimeEmployee("HABIB",28);
+
+
+
+		System.out.println("  PART TIME EMPLOYEE NAME : "+partTimeEmployee.employeeName());
+		System.out.println("  PART TIME EMPLOYEE ID   : "+partTimeEmployee.employeeId());
+		System.out.println(  partTimeEmployee.calculateEmployeeBonus());
+
+
+
+
+
+
+
 
 
 	}
